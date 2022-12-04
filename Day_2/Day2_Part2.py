@@ -3,12 +3,12 @@ def totalScore(text):
 
     valueSelected = {'X': 1, 'Y': 2, 'Z': 3}
 
-    shapeSelected = {'AX': 'Z', 'AY': 'X', 'AZ': 'Y', 
-                    'BX': 'X', 'BY': 'Y', 'BZ': 'Z', 
-                    'CX': 'Y', 'CY': 'Z', 'CZ': 'X'}
+    shapeSelected = {'AX': 'Z', 'AY': 'X', 'AZ': 'Y',
+                     'BX': 'X', 'BY': 'Y', 'BZ': 'Z',
+                     'CX': 'Y', 'CY': 'Z', 'CZ': 'X'}
 
     outcomeRound = {'X': 0, 'Y': 3, 'Z': 6}
-    
+
     with open(text, 'r') as file:
         sum = 0
         for lines in file:
