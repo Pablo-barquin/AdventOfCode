@@ -1,17 +1,17 @@
 
 def mostCaloriesElf(text):
 
-    Elfs = []
+    elfs = []
     with open(text, 'r') as file:
-        Acum = 0
+        acum = 0
         for lines in file:
             if lines == '\n':
-                Elfs.append(Acum)
-                Acum = 0
+                elfs.append(acum)
+                acum = 0
             else:
-                Acum += int(lines)
+                acum += int(lines)
 
-    print(sum(sorted(Elfs, reverse=True)[0:3]))
+    print(sum(sorted(elfs, reverse=True)[0:3]))
 
 
 if '__main__' == __name__:
