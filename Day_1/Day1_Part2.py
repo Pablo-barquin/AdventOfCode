@@ -13,5 +13,6 @@ def mostCaloriesElf(text):
 
     print(sum(sorted(Elfs, reverse=True)[0:3]))
 
+
 if '__main__' == __name__:
     mostCaloriesElf('Day1.txt')

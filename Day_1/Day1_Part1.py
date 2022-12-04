@@ -10,8 +10,9 @@ def mostCaloriesElf(text):
                 sum = 0
             else:
                 sum += int(lines)
-    
+
     return max(Elfs)
+
 
 if '__main__' == __name__:
     print(mostCaloriesElf('Day1.txt'))
