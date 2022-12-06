@@ -39,6 +39,6 @@ def topOfEachStack(text):
 
 
 if '__main__' == __name__:
-    stack = topOfEachStack('Day_5/Day5.txt')
+    stack = topOfEachStack('Day5.txt')
     for value in stack.values():
         print(value[0], end='')
