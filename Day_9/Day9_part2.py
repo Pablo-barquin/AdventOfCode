@@ -35,4 +35,4 @@ def positionsTailVisit(text):
 
 
 if '__main__' == __name__:
-    print(positionsTailVisit('Day_9/Day9.txt'))
+    print(positionsTailVisit('Day9.txt'))
