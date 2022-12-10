@@ -35,4 +35,4 @@ def signalStrengths(text):
 
 
 if '__main__' == __name__:
-    print(signalStrengths('Day_10/Day10.txt'))
+    print(signalStrengths('Day10.txt'))

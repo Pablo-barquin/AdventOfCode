@@ -44,4 +44,4 @@ def spriteCRT(text):
 
 
 if '__main__' == __name__:
-    spriteCRT('Day_10/Day10.txt')
+    spriteCRT('Day10.txt')
