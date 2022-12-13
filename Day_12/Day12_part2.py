@@ -49,7 +49,15 @@ def fewestSteps(text):
         matrix[start] = ord('a')
         matrix[end] = ord('z')
 
-        return bfs(matrix, (int(start[0]), int(start[1])), (int(end[0]), int(end[1])))
+        start = np.where(matrix == ord('a'))
+
+        best = np.inf
+        for x in zip(start[0], start[1]):
+            temp = bfs(matrix, (x[0], x[1]), (int(end[0]), int(end[1])))
+            if temp != None and best > temp:
+                best = temp
+
+        return best
 
 
 if '__main__' == __name__:
