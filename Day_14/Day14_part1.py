@@ -7,6 +7,7 @@ def calcSand(matrix):
     it = 0
     flag = True
     lastPoint = list()
+    lastPoint.append((tempX, tempY))
     while flag:
         if tempX + 1 == matrix.shape[0]:
             flag = False
@@ -26,21 +27,20 @@ def calcSand(matrix):
                 matrix[tempX, tempY] = 'o'
                 it += 1
                 lastPoint.pop()
+                if not len(lastPoint):
+                    break
                 tempX, tempY = lastPoint[-1][0], lastPoint[-1][1]
 
     return it
 
 
 def obtainMatrix(data):
-    minValue = min(min(d['y']) for d in data.values())
-    for aux in data.values():
-        aux['y'] = [d - minValue for d in aux['y']]
 
     maxX = max(max(d['x']) for d in data.values())
     maxY = max(max(d['y']) for d in data.values())
 
     matrix = np.full((maxX+1, maxY+1), '.')
-    matrix[0, 500-minValue] = '+'
+    matrix[0, 500] = '+'
 
     for key in data.values():
         pos = list(zip(key['x'], key['y']))
