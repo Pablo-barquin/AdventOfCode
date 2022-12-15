@@ -2,27 +2,31 @@ import numpy as np
 
 
 def calcSand(matrix):
-    x_start, y_start = np.where(matrix == '+')
-    tempX, tempY = x_start, y_start
+    tempX, tempY = np.where(matrix == '+')
 
     it = 0
     flag = True
+    lastPoint = list()
     while flag:
         if tempX + 1 == matrix.shape[0]:
             flag = False
         else:
             if matrix[tempX+1, tempY] == '.':
                 tempX = tempX+1
+                lastPoint.append((tempX, tempY))
             elif tempY-1 > 0 and matrix[tempX+1, tempY-1] == '.':
                 tempX, tempY = tempX+1, tempY-1
+                lastPoint.append((tempX, tempY))
             elif tempY+1 != matrix.shape[1] and matrix[tempX+1, tempY+1] == '.':
                 tempX, tempY = tempX+1, tempY+1
+                lastPoint.append((tempX, tempY))
             elif tempY-1 == -1 or tempY+1 == matrix.shape[1]:
                 flag = False
             else:
                 matrix[tempX, tempY] = 'o'
                 it += 1
-                tempX, tempY = x_start, y_start
+                lastPoint.pop()
+                tempX, tempY = lastPoint[-1][0], lastPoint[-1][1]
 
     return it
 
