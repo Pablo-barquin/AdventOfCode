@@ -74,4 +74,4 @@ def unitsOfSand(text):
 
 
 if '__main__' == __name__:
-    print(unitsOfSand('Day_14/Day14.txt'))
+    print(unitsOfSand('Day14.txt'))
