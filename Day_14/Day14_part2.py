@@ -17,8 +17,6 @@ def calcSand(matrix):
                 tempX, tempY = tempX+1, tempY-1
             elif tempY+1 != matrix.shape[1] and matrix[tempX+1, tempY+1] == '.':
                 tempX, tempY = tempX+1, tempY+1
-            elif tempY-1 == -1 or tempY+1 == matrix.shape[1]:
-                flag = False
             else:
                 matrix[tempX, tempY] = 'o'
                 it += 1
@@ -28,15 +26,12 @@ def calcSand(matrix):
 
 
 def obtainMatrix(data):
-    minValue = min(min(d['y']) for d in data.values())
-    for aux in data.values():
-        aux['y'] = [d - minValue for d in aux['y']]
 
-    maxX = max(max(d['x']) for d in data.values())
+    maxX = max(max(d['x']) for d in data.values()) + 2
     maxY = max(max(d['y']) for d in data.values())
 
     matrix = np.full((maxX+1, maxY+1), '.')
-    matrix[0, 500-minValue] = '+'
+    matrix[0, 500] = '+'
 
     for key in data.values():
         pos = list(zip(key['x'], key['y']))
@@ -47,6 +42,10 @@ def obtainMatrix(data):
                              max(pos[0][1], pos[1][1])+1))
             matrix[row, col] = '#'
             pos.pop(0)
+
+
+    col = list(range(0, maxY+1))
+    matrix[maxX, col] = '#'
 
     return matrix
 
