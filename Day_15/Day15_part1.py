@@ -37,4 +37,4 @@ def cannotContainBeacon(text, row):
 
 
 if '__main__' == __name__:
-    print(cannotContainBeacon('Day_15/Day15.txt', 2000000))
+    print(cannotContainBeacon('Day15.txt', 2000000))

@@ -56,5 +56,5 @@ def ContainBeacon(text, size):
 
 
 if '__main__' == __name__:
-    print(ContainBeacon('Day_15/Day15.txt', 4_000_000))
+    print(ContainBeacon('Day15.txt', 4_000_000))
 
