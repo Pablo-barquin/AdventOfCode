@@ -68,4 +68,4 @@ def mostPressure(text):
 
 
 if '__main__' == __name__:
-    print(mostPressure('Day_16/Day16.txt'))
+    print(mostPressure('Day16.txt'))
